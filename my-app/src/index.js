@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const fname = "Salah";
+const mname = " Eddine";
+const lname = " Harrachmin"
+const num = 7;
 root.render(
   <div>
-    <h1>My Favourite Foods</h1>
-    <ul>
-      <li>Bacon</li>
-      <li>Noodles</li>
-      <li>Jamon</li>
-    </ul>
+    <h1>Hello {fname + mname + lname}</h1>
+    <p>Your lucky number is {num}</p>
   </div>
 );
 
