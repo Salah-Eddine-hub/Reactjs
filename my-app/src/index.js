@@ -1,19 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom";
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-const fname = "Salah";
-const mname = " Eddine";
-const lname = " Harrachmin"
-const num = 7;
-root.render(
+const myName = "Salah-Eddine Harrachmin";
+const cYear = new Date().getFullYear();
+ReactDOM.render(
   <div>
-    <h1>Hello {fname + mname + lname}</h1>
-    <p>Your lucky number is {num}</p>
-  </div>
-);
+    <p>Created by {myName}</p>
+    <p>Copyright {cYear}</p>
+  </div>,
+  document.getElementById('root'));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+//Create a react app from scratch.
+//It should display 2 paragraph HTML elements.
+//The paragraphs should say:
+//Created by YOURNAME.
+//Copyright CURRENTYEAR.
+//E.g.
+//Created by Angela Yu.
+//Copyright 2019.
