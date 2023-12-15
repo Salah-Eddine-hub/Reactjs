@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import pi, {doubleYourPi, tripleYourPi} from "./Math.jsx";
+import * as calc from "./Calculator";
+
+//Import the add, multiply, subtract and divide functions
+//from the calculator.js file.
+//If successful, your website should look the same as the Final.png
 
 ReactDOM.render(
-  <div>
-    <ul>
-      <li>{pi}</li>
-      <li>{doubleYourPi()}</li>
-      <li>{tripleYourPi()}</li>
-    </ul>
-  </div>,
-  document.getElementById("root"));
+  <ul>
+    <li>{calc.add(1, 2)}</li>
+    <li>{calc.multiply(2, 3)}</li>
+    <li>{calc.subtract(7, 2)}</li>
+    <li>{calc.divide(5, 2)}</li>
+  </ul>,
+  document.getElementById("root")
+);
