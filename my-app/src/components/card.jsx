@@ -16,13 +16,22 @@ function Info(props){
     </div>
   );
 }
+
+function createCard(contacts){
+  return (
+    <Info 
+      key={contacts.id}
+      name={contacts.name}
+      img={contacts.imgURL}
+      tel={contacts.tel}
+      email={contacts.email}/>
+  );
+}
 function Card(){
     return(
     <div>
         <h1 className="heading">My Contacts</h1>
-        <Info name={contacts[0].name} img={contacts[0].imgURL} num={contacts[0].phone} email={contacts[0].email}/>
-        <Info name={contacts[1].name} img={contacts[1].imgURL} num={contacts[1].phone} email={contacts[1].email}/>
-        <Info name={contacts[2].name} img={contacts[2].imgURL} num={contacts[2].phone} email={contacts[2].email}/>
+        {contacts.map(createCard)}
     </div>
     );
 }
