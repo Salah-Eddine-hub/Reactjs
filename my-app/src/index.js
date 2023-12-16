@@ -1,20 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import APP from "./components/App";
+import me from "./images/me.png"
+import him from "./images/him.png"
+import she from "./images/she.png"
+import trash from "./images/trash.png"
+
+function Contacts(props){
+    return (
+        <div>
+            <h2>{props.name}</h2>
+            <img src={props.image} alt="avatar_img" />
+            <p>{props.num}</p>
+            <p>{props.email}</p>
+        </div>
+    );
+}
 
 ReactDOM.render(
-    <APP />,
-    document.getElementById("root")
+  <div>
+    <h1>My Contacts</h1>
+    <Contacts name="me" image={me} num="0662225695" email="myemail@gmail.com" />
+    <Contacts name="him" image={him} num="0662225692" email="hismemail@gmail.com" />
+    <Contacts name="she" image={she} num="0662225693" email="she'semail@gmail.com" />
+    <Contacts name="none" image={trash} num="000000000" email="noneemail@gmail.com" />
+  </div>,
+  document.getElementById("root")
 );
-//1. Create a new React app.
-//2. Create a App.jsx component.
-//3. Create a Header.jsx component that renders a <header> element
-//to show the Keeper App name in an <h1>.
-//4. Create a Footer.jsx component that renders a <footer> element
-//to show a copyright message in a <p> with a dynamically updated year.
-//5. Create a Note.jsx component to show a <div> element with a
-//<h1> for a title and a <p> for the content.
-//6. Make sure that the final website is styled like the example shown here:
-//https://l1pp6.csb.app/
-
-//HINT: You will need to study the classes in teh styles.css file to appy styling.
