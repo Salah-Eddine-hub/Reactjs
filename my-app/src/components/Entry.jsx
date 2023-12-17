@@ -18,17 +18,5 @@ function Display(props){
     );
   }
   
-  function Entry(not){
-    return(
-        
-    <dl className="dictionary">
-      <Display 
-        key={not.id}
-        emoji={not.emoji}
-        name={not.name}
-        meaning={not.meaning}/>
-    </dl>
-    );
-  }
 
 export default Entry;
