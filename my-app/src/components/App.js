@@ -1,10 +1,16 @@
 import React from "react";
-import Card from "./card";
+import emojipedia from "./../imogiepedia"
+import Entry from "./Entry";
 
 
 function App() {
   return (
-    <Card />
+    <div>
+    <h1>
+      <span>emojipedia</span>
+    </h1>
+      {emojipedia.map(Entry)}
+    </div>
   );
 }
 
