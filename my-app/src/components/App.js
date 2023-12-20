@@ -1,24 +1,24 @@
 import React from "react";
 
-var isDone = true;
 
-function strike() {
-  isDone = true;
-}
+function App(){
+  const [count, setcount] = React.useState(0);
 
-function unStrike() {
-  isDone = false;
-}
+  function increase(){
+    return setcount(count + 1); 
+  }
 
-function App() {
+  function decrease(){
+    return setcount(count - 1);
+  }
+
   return (
-    <div>
-      {/* <p style={{textDecoration: "line-through"}}>I am salah ostora</p> */}
-      <p style={isDone ? { textDecoration: "line-through" } : null}>Buy milk</p>
-      <button onClick={strike}>Change to strike through</button>
-      <button onClick={unStrike}>Change back</button>
+    <div className="container">
+      <h1>{count}</h1>
+      <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button>
     </div>
-  );
+);
 }
 
 export default App;
