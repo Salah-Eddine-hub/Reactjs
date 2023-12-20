@@ -1,23 +1,23 @@
 import React from "react";
-import Header from "./Header"
-import Note from "./Note"
-import Footer from "./Footer"; 
-import notes from "./../notes";
+import Login from "./login";
 
-function APP() {
-    return (
-      <div>
-        <Header />
-        {notes.map(noteItem => (
-          <Note
-            key={noteItem.key}
-            title={noteItem.title}
-            content={noteItem.content}
-          />
-        ))}
-        <Footer />
-      </div>
-    );
-  }
 
-export default APP;
+var isLogIn = true;
+
+function checkLogin(){
+return (
+  isLogIn ? <h1>Hello</h1> : <Login />
+  //and there is the && operator that checks only the left side if it true than execute the right side
+)
+}
+
+
+function App() {
+  return (
+    <div className="container">
+      {checkLogin()}
+    </div>
+  );
+}
+
+export default App;
