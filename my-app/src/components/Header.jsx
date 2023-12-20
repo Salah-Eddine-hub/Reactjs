@@ -1,4 +1,7 @@
 import React from "react";
+import notes from "./../notes";
+import Note from "./Note"
+
 
 function Header(){
     return (
@@ -7,6 +10,7 @@ function Header(){
                 <h1>Keeper</h1>
             </header>
         </div>
+               
     );
 }
 
