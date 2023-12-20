@@ -1,21 +1,15 @@
 import React from "react";
-import Login from "./login";
+import Form from "./Form";
 
-
-var isLogIn = true;
-
-function checkLogin(){
-return (
-  isLogIn ? <h1>Hello</h1> : <Login />
-  //and there is the && operator that checks only the left side if it true than execute the right side
-)
-}
-
+var userIsRegistered = true;
 
 function App() {
   return (
     <div className="container">
-      {checkLogin()}
+      <Form 
+        isregistred={userIsRegistered}
+      />
+
     </div>
   );
 }
