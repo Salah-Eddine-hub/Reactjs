@@ -1,11 +1,12 @@
-import React, { StrictMode } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
 let time = new Date().toLocaleTimeString();
+console.log(time);
 
 
-ReactDOM.render(<StrictMode><App time={time}/></StrictMode>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 //Challenge:
 //1. Given that you can get the current time using:

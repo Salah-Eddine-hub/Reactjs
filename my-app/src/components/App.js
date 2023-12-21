@@ -1,14 +1,15 @@
 import React from "react";
 
 
-function App(props) {
-  const [time, setTime] = React.useState(props.time);
+function App() {
+  const now = new Date().toLocaleTimeString();
+  const [time, setTime] = React.useState(now);
 
   function updateTime(){
     setTime(new Date().toLocaleTimeString());
   }
   
-  setInterval(setTime(new Date().toLocaleTimeString()), 1000);
+  setInterval(updateTime, 1000)
 
   return (
     <div className="container">
