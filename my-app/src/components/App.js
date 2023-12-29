@@ -1,30 +1,37 @@
 import React, { useState } from "react";
 
-
 function App() {
-  const [heading, setHeader] = useState("Hello");
-  const [isHover, setStyle] = useState(false);
-  
-  function mouseEv(){
-    setHeader("Submited");
+
+  const [text, setname] = useState("");
+  const [sub, checkIt] = useState("");
+
+  // function fillText(){
+  //   setname();
+  // }
+
+  function handleChange(event){
+    console.log(event.target.value);
+    setname(event.target.value);
+    // event.preventDefault();
   }
 
-
-  function hovered(){
-    console.log("you just hovered here");
-    setStyle(true);
-   }
-   function unhovered(){
-    console.log("you just hovered here");
-    setStyle(false);
-   }
-
+  function addText(event){
+    checkIt(text);
+    event.preventDefault();
+    
+  }
 
   return (
-      <div className="container">
-        <h1>{heading}</h1>
-      <input type="text" placeholder="What's your name?" />
-      <button  style={{backgroundColor: isHover ? "black" : "white"}} onClick={mouseEv} onMouseOver={hovered} onMouseOut={unhovered}>Submit</button>
+    <div className="container">
+      <h1>Hello {sub}</h1>
+      <form>
+        <input onChange={handleChange}
+                type="text" 
+                placeholder="What's your name?" 
+                value={text}/>
+        
+      <button onClick={addText}>Submit</button>
+      </form>
     </div>
   );
 }
