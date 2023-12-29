@@ -1,23 +1,16 @@
 import React, {useState} from "react";
 import Todo from "./Todo";
+import InputArea from "./InputArea";
 
 function TodoItems(){
 
-  const [input, setInput] = useState("");
   const [items, setItems] = useState([]);
 
-  function saveChange(event){
-    const todoke = event.target.value;
-    // console.log(event.target.value);
-    setInput(todoke)
-  }
 
-  function addToArray(){
-    // const value = event.target.value;
+  function addToArray(inputText){
     setItems(prevItem => {
-      return [...prevItem, input];
+      return [...prevItem, inputText];
     });
-    setInput("");
   }
 
   function deleteItem(id){
@@ -32,12 +25,7 @@ function TodoItems(){
         <div className="heading">
         <h1>To-Do List</h1>
         </div>
-        <div className="form">
-        <input type="text" value={input} onChange={saveChange} />
-        <button onClick={addToArray} >
-            <span name="button" >Add</span>
-        </button>
-        </div>
+        <InputArea addToArray={addToArray} />
         <div>
         <ul>
             {items.map((item, index) => <Todo key={index} id={index} text={item} onChecked={deleteItem}/>)}
