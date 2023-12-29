@@ -1,37 +1,39 @@
 import React, { useState } from "react";
 
 function App() {
-  const [contact, setContact] = useState({
-    fName: "",
-    lName: "",
-    email: ""
-  });
+  const [input, setInput] = useState("");
+  const [items, setItems] = useState([]);
 
-  function applyChanges(event){
+  function saveChange(event){
+    const todoke = event.target.value;
+    // console.log(event.target.value);
+    setInput(todoke)
+  }
 
-    const {value, name} = event.target;
-    // console.log(value);
-    // console.log(name);
-    setContact(preValue =>{
-      return {
-        ...preValue,
-        [name] : value
-      }
+  function addToArray(){
+    // const value = event.target.value;
+    setItems(prevItem => {
+      return [...prevItem, input];
     });
+    setInput("");
   }
 
   return (
     <div className="container">
-      <h1>
-        Hello {contact.fName} {contact.lName}
-      </h1>
-      <p>{contact.email}</p>
-      <form>
-        <input name="fName" onChange={applyChanges} placeholder="First Name" />
-        <input name="lName" onChange={applyChanges} placeholder="Last Name" />
-        <input name="email" onChange={applyChanges} placeholder="Email" />
-        <button>Submit</button>
-      </form>
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input type="text" value={input} onChange={saveChange} />
+        <button onClick={addToArray} >
+          <span name="button" >Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {items.map((item, index)=>{return <li key={index}>{item}</li>})}
+        </ul>
+      </div>
     </div>
   );
 }
