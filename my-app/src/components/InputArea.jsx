@@ -9,11 +9,12 @@ function InputArea(props){
       }
    return ( 
     <div className="form">
-            <input type="text"  onChange={saveChange} />
+            <input type="text"  onChange={saveChange} value={input} />
             <button onClick={() =>{
-                props.addToArray(input);
+                console.log(input);
                 setInput("");
-            }} >
+            }} 
+            >
                 <span name="button" >Add</span>
             </button>
     </div>);

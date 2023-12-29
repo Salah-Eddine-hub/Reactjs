@@ -7,9 +7,9 @@ function TodoItems(){
   const [items, setItems] = useState([]);
 
 
-  function addToArray(inputText){
+  function addToArray(items){
     setItems(prevItem => {
-      return [...prevItem, inputText];
+      return [...prevItem, items];
     });
   }
 
