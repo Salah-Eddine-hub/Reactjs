@@ -1,10 +1,12 @@
 import CreateArea from './CreateArea'
-import Footer from './Footer'
+import SignPage from './Sign'
+
 export default function Home() {
   return (
     <>
         <body className="container">
-            <CreateArea />
+            {/* <CreateArea /> */}
+            <SignPage />
         </body>
      </>
   )
